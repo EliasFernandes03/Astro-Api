@@ -38,4 +38,10 @@ class EventController extends Controller
 
         return response()->json($event, 200);
     }
+
+    public function delete($id)
+    {
+        $this->eventRepository->delete($id);
+        return response()->json(['message' => 'Event deleted successfully'], 200);
+    }
 }
