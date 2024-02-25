@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateEventRequest extends FormRequest
+class EventRequest extends FormRequest
 {
 
     public function rules()
     {
         return [
-            'name' => '|string|max:30',
-            'description' => 'string|max:50',
+            'name' => 'required|string|max:30',
+            'description' => 'nullable|string|max:50',
         ];
     }
 }

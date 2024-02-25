@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\EventRepository;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateEventRequest;
+use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
 {
@@ -21,12 +21,21 @@ class EventController extends Controller
         return response()->json($events);
     }
 
-    public function store(CreateEventRequest $request) 
+    public function store(EventRequest $request) 
     {
         $validatedData = $request->validated();
 
         $event = $this->eventRepository->create($validatedData);
 
-        return response()->json($event, 201);
+        return response()->json($event, 200);
+    }
+
+    public function update($id, EventRequest $request)
+    {
+        $validatedData = $request->validated();
+
+        $event = $this->eventRepository->update($id, $validatedData);
+
+        return response()->json($event, 200);
     }
 }
