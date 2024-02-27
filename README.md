@@ -19,7 +19,7 @@ To use this API you will need :
 - Open the terminal and  enter in the root folder of the application.
 
 - Install dependencies :
-`Composer install`
+`composer install`
 
 - Run the application: 
 `php -S localhost:8000 -t public`
