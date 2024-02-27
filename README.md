@@ -33,7 +33,7 @@ To use this API you will need :
 
 ## Routes
 
-- baseUrl = `http://localhost:8000/api/`
+- baseUrl = `http://localhost:8000/api`
 
 - Open the postman, you will test the routes there.
 
